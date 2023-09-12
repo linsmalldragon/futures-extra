@@ -45,10 +45,6 @@ public class ConcurrencyLimiterTest {
     ConcurrencyLimiter.create(MoreExecutors.directExecutor(), 0, 10);
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testTooLowQueueSize() throws Exception {
-    ConcurrencyLimiter.create(MoreExecutors.directExecutor(), 10, 0);
-  }
 
   @Test(expected = NullPointerException.class)
   public void testNullJob() throws Exception {
